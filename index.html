@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Altezza Group | Plataforma de Emprendedores</title>
+  <style>
+    :root {
+      --primario: #111827;
+      --dorado: #c59d5f; 
+      --dorado-oscuro: #a88246;
+      --fondo: #f8f9fa;
+      --blanco: #ffffff;
+      --texto: #1f2937;
+      --gris: #6b7280;
+      --whatsapp: #25D366;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--fondo);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: var(--blanco);
+      padding: 3rem 1.5rem;
+      text-align: center;
+      border-bottom: 4px solid var(--dorado);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+      color: var(--dorado);
+    }
+
+    header p {
+      max-width: 650px;
+      margin: 0 auto 1.5rem auto;
+      font-size: 1.1rem;
+      color: #e5e7eb;
+    }
+
+    .btn-publicar {
+      display: inline-block;
+      background-color: var(--dorado);
+      color: #111827;
+      font-weight: bold;
+      padding: 0.85rem 1.8rem;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn-publicar:hover {
+      background-color: var(--dorado-oscuro);
+      color: var(--blanco);
+    }
+
+    .contenedor {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1.2rem;
+    }
+
+    .buscador-caja {
+      background: var(--blanco);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      margin-bottom: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .buscador-caja input, .buscador-caja select {
+      padding: 0.8rem 1rem;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 1rem;
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .grid-servicios {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .tarjeta {
+      background: var(--blanco);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-top: 4px solid var(--dorado);
+    }
+
+    .categoria-tag {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 0.8rem;
+      font-weight: bold;
+      padding: 0.25rem 0.7rem;
+      border-radius: 20px;
+      margin-bottom: 0.8rem;
+      width: fit-content;
+    }
+
+    .tarjeta h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: var(--primario);
+    }
+
+    .tarjeta p {
+      color: var(--gris);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .ubicacion {
+      font-size: 0.85rem;
+      color: #374151;
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+
+    .btn-whatsapp {
+      display: block;
+      text-align: center;
+      background-color: var(--whatsapp);
+      color: var(--blanco);
+      font-weight: bold;
+      padding: 0.75rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .btn-whatsapp:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+      background-color: var(--primario);
+      color: #9ca3af;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ALTEZZA GROUP</h1>
+    <p>Plataforma creada para emprendedores. Conecta directamente con los mejores servicios, productos y talento independiente en un solo lugar.</p>
+    <!-- Cambia el enlace # por tu formulario de Google o tu WhatsApp -->
+    <a href="https://wa.me/10000000000?text=Hola%20Altezza%20Group,%20quiero%20registrar%20mi%20emprendimiento" target="_blank" class="btn-publicar">
+      + Publicar mi emprendimiento
+    </a>
+  </header>
+
+  <main class="contenedor">
+    <section class="buscador-caja">
+      <input type="text" id="buscador" placeholder="¿Qué servicio o producto buscas hoy?" onkeyup="filtrarServicios()" />
+      <select id="filtroCategoria" onchange="filtrarServicios()">
+        <option value="todas">Todas las categorías</option>
+        <option value="Belleza y Estética">Belleza y Estética</option>
+        <option value="Hogar y Cocina">Hogar y Cocina</option>
+        <option value="Domicilios y Logística">Domicilios y Logística</option>
+        <option value="Asesorías y Negocios">Asesorías y Negocios</option>
+      </select>
+    </section>
+
+    <section class="grid-servicios" id="listaServicios">
+      <!-- Emprendimiento 1 -->
+      <article class="tarjeta" data-categoria="Belleza y Estética">
+        <div>
+          <span class="categoria-tag">Belleza y Estética</span>
+          <h3>Estudio de Cejas, Pestañas y Maquillaje</h3>
+          <p>Diseño de cejas con henna, depilación, laminado y maquillaje profesional a domicilio para eventos especiales.</p>
+          <div class="ubicacion">📍 Atención a domicilio y cita previa</div>
+        </div>
+        <a href="https://wa.me/10000000000?text=Hola,%20vi%20tu%20servicio%20de%20Belleza%20en%20Altezza%20Group%20y%20quiero%20agendar" target="_blank" class="btn-whatsapp">
+          Contactar por WhatsApp
+        </a>
+      </article>
+
+      <!-- Emprendimiento 2 -->
+      <article class="tarjeta" data-categoria="Hogar y Cocina">
+        <div>
+          <span class="categoria-tag">Hogar y Cocina</span>
+          <h3>Asesoría en Sistemas de Cocina Saludable</h3>
+          <p>Demostraciones personalizadas, utensilios de acero quirúrgico y financiamiento para equipar tu cocina.</p>
+          <div class="ubicacion">📍 Demostración en casa o virtual</div>
+        </div>
+        <a href="https://wa.me/10000000000?text=Hola,%20vi%20tu%20servicio%20de%20Cocina%20en%20Altezza%20Group%20y%20quiero%20información" target="_blank" class="btn-whatsapp">
+          Contactar por WhatsApp
+        </a>
+      </article>
+
+      <!-- Emprendimiento 3 -->
+      <article class="tarjeta" data-categoria="Domicilios y Logística">
+        <div>
+          <span class="categoria-tag">Domicilios y Logística</span>
+          <h3>Mensajería y Mandados Express</h3>
+          <p>Entregas rápidas, diligencias personales y envíos locales seguros el mismo día.</p>
+          <div class="ubicacion">📍 Cobertura urbana</div>
+        </div>
+        <a href="https://wa.me/10000000000?text=Hola,%20vi%20tu%20servicio%20de%20Mensajería%20en%20Altezza%20Group" target="_blank" class="btn-whatsapp">
+          Contactar por WhatsApp
+        </a>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Altezza Group — Plataforma creada para emprendedores.</p>
+  </footer>
+
+  <script>
+    function filtrarServicios() {
+      const texto = document.getElementById('buscador').value.toLowerCase();
+      const categoria = document.getElementById('filtroCategoria').value;
+      const tarjetas = document.querySelectorAll('.tarjeta');
+
+      tarjetas.forEach(tarjeta => {
+        const contenido = tarjeta.innerText.toLowerCase();
+        const catTarjeta = tarjeta.getAttribute('data-categoria');
+        const coincideTexto = contenido.includes(texto);
+        const coincideCategoria = (categoria === 'todas' || catTarjeta === categoria);
+
+        if (coincideTexto && coincideCategoria) {
+          tarjeta.style.display = 'flex';
+        } else {
+          tarjeta.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
